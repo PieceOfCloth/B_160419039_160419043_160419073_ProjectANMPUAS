@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.b_160419073_projectuts.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionDetailKos"
+            app:destination="@id/detailKosFragment" />
+        <action
+            android:id="@+id/actionPromoCode"
+            app:destination="@id/promoCodeFragment" />
+        <action
+            android:id="@+id/actionHelp"
+            app:destination="@id/helpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailKosFragment"
+        android:name="com.example.b_160419073_projectuts.view.DetailKosFragment"
+        android:label="fragment_detail_kos"
+        tools:layout="@layout/fragment_detail_kos" >
+        <action
+            android:id="@+id/actionDetailKosToHome"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/promoCodeFragment"
+        android:name="com.example.b_160419073_projectuts.view.PromoCodeFragment"
+        android:label="fragment_promo_code"
+        tools:layout="@layout/fragment_promo_code" >
+        <action
+            android:id="@+id/actionPromoCodeToHome"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.b_160419073_projectuts.view.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/actionHelpToHome"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.b_160419073_projectuts.view.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" >
+        <action
+            android:id="@+id/actionArticleDetail"
+            app:destination="@id/articleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleDetailFragment"
+        android:name="com.example.b_160419073_projectuts.view.ArticleDetailFragment"
+        android:label="fragment_article_detail"
+        tools:layout="@layout/fragment_article_detail" >
+        <action
+            android:id="@+id/actionArticle"
+            app:destination="@id/articleFragment"
+            app:popUpTo="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.b_160419073_projectuts.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/actionProfileEdit"
+            app:destination="@id/profileEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileEditFragment"
+        android:name="com.example.b_160419073_projectuts.view.ProfileEditFragment"
+        android:label="fragment_profile_edit"
+        tools:layout="@layout/fragment_profile_edit" >
+        <action
+            android:id="@+id/actionProfile"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/profileFragment" />
+    </fragment>
+</navigation>
