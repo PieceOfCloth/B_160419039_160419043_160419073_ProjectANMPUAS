@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/activity_login.xml" value="0.15534420289855072" />
-        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/fragment_home.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/activity_main.xml" value="0.15534420289855072" />
+        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/fragment_detail_kos.xml" value="0.22" />
+        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/list_kos_item.xml" value="0.25" />
+        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/menu/bottom_menu.xml" value="0.20833333333333334" />
       </map>
     </option>
   </component>
