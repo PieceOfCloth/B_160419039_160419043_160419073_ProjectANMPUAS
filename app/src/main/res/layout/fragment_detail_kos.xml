@@ -44,13 +44,22 @@
             app:layout_constraintTop_toBottomOf="@+id/txtNama" />
 
         <TextView
+            android:id="@+id/txtTelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="No Telp"
+            app:layout_constraintStart_toStartOf="@+id/txtNama"
+            app:layout_constraintTop_toBottomOf="@+id/txtDeskripsi" />
+
+        <TextView
             android:id="@+id/txtAlamat2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Alamat"
-            app:layout_constraintStart_toStartOf="@+id/txtDeskripsi"
-            app:layout_constraintTop_toBottomOf="@+id/txtDeskripsi" />
+            app:layout_constraintStart_toStartOf="@+id/txtTelp"
+            app:layout_constraintTop_toBottomOf="@+id/txtTelp" />
 
         <TextView
             android:id="@+id/txtHarga"

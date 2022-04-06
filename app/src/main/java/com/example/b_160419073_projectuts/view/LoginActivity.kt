@@ -1,6 +1,5 @@
 package com.example.b_160419073_projectuts.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -20,6 +19,5 @@ class LoginActivity : AppCompatActivity() {
 
         navController = (supportFragmentManager.findFragmentById(R.id.hostFragment) as NavHostFragment).navController
         NavigationUI.setupActionBarWithNavController(this, navController)
-
     }
 }

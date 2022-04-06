@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.example.b_160419073_projectuts.R
+import kotlinx.android.synthetic.main.fragment_article.*
 
 class ArticleFragment : Fragment() {
 
@@ -15,6 +17,15 @@ class ArticleFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_article, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btnDetailArticle.setOnClickListener {
+            val action = ArticleFragmentDirections.actionArticleDetail()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 }

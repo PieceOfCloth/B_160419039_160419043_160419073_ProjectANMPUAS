@@ -15,12 +15,73 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:hint="Search"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:layout_constraintEnd_toStartOf="@+id/btnSearch"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="53dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="8dp"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_baseline_search_24"
+                app:layout_constraintEnd_toStartOf="@+id/btnCouponPromo"
+                app:layout_constraintTop_toTopOf="@+id/btnCouponPromo"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/btnCouponPromo"
+                android:layout_width="53dp"
+                android:layout_height="46dp"
+                android:layout_marginEnd="8dp"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_baseline_money_off_24"
+                app:layout_constraintEnd_toStartOf="@+id/btnHelp"
+                app:layout_constraintTop_toTopOf="@+id/btnHelp"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/btnHelp"
+                android:layout_width="53dp"
+                android:layout_height="46dp"
+                android:layout_marginEnd="24dp"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_baseline_help_24"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayout5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textInputLayout5"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:layout_editor_absoluteX="-74dp"
-                tools:layout_editor_absoluteY="-110dp">
+                android:layout_width="409dp"
+                android:layout_height="653dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -32,7 +93,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/recView" />
 
             <TextView
                 android:id="@+id/txtError"
@@ -42,7 +103,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/recView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

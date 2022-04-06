@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/itemHome">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/itemHome"
         android:name="com.example.b_160419073_projectuts.view.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
@@ -27,8 +27,8 @@
         tools:layout="@layout/fragment_detail_kos" >
         <action
             android:id="@+id/actionDetailKosToHome"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment" />
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome" />
     </fragment>
     <fragment
         android:id="@+id/promoCodeFragment"
@@ -37,8 +37,8 @@
         tools:layout="@layout/fragment_promo_code" >
         <action
             android:id="@+id/actionPromoCodeToHome"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment" />
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome" />
     </fragment>
     <fragment
         android:id="@+id/helpFragment"
@@ -47,11 +47,11 @@
         tools:layout="@layout/fragment_help" >
         <action
             android:id="@+id/actionHelpToHome"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/homeFragment" />
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome" />
     </fragment>
     <fragment
-        android:id="@+id/articleFragment"
+        android:id="@+id/itemArticle"
         android:name="com.example.b_160419073_projectuts.view.ArticleFragment"
         android:label="fragment_article"
         tools:layout="@layout/fragment_article" >
@@ -66,11 +66,11 @@
         tools:layout="@layout/fragment_article_detail" >
         <action
             android:id="@+id/actionArticle"
-            app:destination="@id/articleFragment"
-            app:popUpTo="@id/articleFragment" />
+            app:destination="@id/itemArticle"
+            app:popUpTo="@id/itemArticle" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/itemProfile"
         android:name="com.example.b_160419073_projectuts.view.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
@@ -85,7 +85,7 @@
         tools:layout="@layout/fragment_profile_edit" >
         <action
             android:id="@+id/actionProfile"
-            app:destination="@id/profileFragment"
-            app:popUpTo="@id/profileFragment" />
+            app:destination="@id/itemProfile"
+            app:popUpTo="@id/itemProfile" />
     </fragment>
 </navigation>
