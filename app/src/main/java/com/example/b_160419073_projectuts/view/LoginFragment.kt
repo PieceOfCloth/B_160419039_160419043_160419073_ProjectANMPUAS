@@ -1,5 +1,6 @@
 package com.example.b_160419073_projectuts.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,5 +27,4 @@ class LoginFragment : Fragment() {
             Navigation.findNavController(it).navigate(action)
         }
     }
-
 }

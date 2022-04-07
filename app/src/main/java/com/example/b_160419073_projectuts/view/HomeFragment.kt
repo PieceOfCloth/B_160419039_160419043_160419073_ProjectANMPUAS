@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.b_160419073_projectuts.R
 import com.example.b_160419073_projectuts.viewmodel.ListVM
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -17,7 +18,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: ListVM
     private val listKosAdapter  = ListKosAdapter(arrayListOf())
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +30,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel = ViewModelProvider(this).get(ListVM::class.java)
+        viewModel.refresh()
+
+        recView.layoutManager = LinearLayoutManager(context)
+        recView.adapter = listKosAdapter
+
+        observeViewModel()
+
         btnHelp.setOnClickListener {
             val action = HomeFragmentDirections.actionHelp()
             Navigation.findNavController(it).navigate(action)
@@ -40,20 +48,20 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(it).navigate(action)
         }
 
-        viewModel = ViewModelProvider(this).get(ListVM::class.java)
-        viewModel.refresh()
+        refreshLayout.setOnRefreshListener {
+            recView.visibility = View.GONE
+            txtError.visibility = View.GONE
+            progressLoad.visibility = View.VISIBLE
+            viewModel.refresh()
+            refreshLayout.isRefreshing = false
+        }
 
-        recView.layoutManager = LinearLayoutManager(context)
-        recView.adapter = listKosAdapter
-
-        observeViewModel()
     }
 
     fun observeViewModel() {
-
-        viewModel.kosLD.observe(viewLifecycleOwner, Observer {
+        viewModel.kosLD.observe(viewLifecycleOwner) {
             listKosAdapter.updateListKos(it)
-        })
+        }
 
         viewModel.kosLoadErrorLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {

@@ -29,6 +29,9 @@
             android:id="@+id/actionDetailKosToHome"
             app:destination="@id/itemHome"
             app:popUpTo="@id/itemHome" />
+        <argument
+            android:name="kosId"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/promoCodeFragment"

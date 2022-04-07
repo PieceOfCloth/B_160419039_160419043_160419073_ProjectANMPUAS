@@ -1,5 +1,6 @@
 package com.example.b_160419073_projectuts.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -15,7 +16,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
 
         navController = (supportFragmentManager.findFragmentById(R.id.hostFragment) as NavHostFragment).navController
         NavigationUI.setupActionBarWithNavController(this, navController)
