@@ -12,7 +12,7 @@ import com.example.b_160419073_projectuts.loadImage
 import com.example.b_160419073_projectuts.model.Kos
 import kotlinx.android.synthetic.main.list_kos_item.view.*
 
-class ListKosAdapter(val listKos:ArrayList<Kos>):RecyclerView.Adapter<ListKosAdapter.KosViewHolder>(){
+class ListKosAdapter(val listKos:ArrayList<Kos>):RecyclerView.Adapter<ListKosAdapter.KosViewHolder>(), ButtonDetailClickListener{
     class KosViewHolder(var view: ListKosItemBinding) : RecyclerView.ViewHolder(view.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KosViewHolder {
@@ -26,6 +26,7 @@ class ListKosAdapter(val listKos:ArrayList<Kos>):RecyclerView.Adapter<ListKosAda
 
     override fun onBindViewHolder(holder: KosViewHolder, position: Int) {
         holder.view.kos = listKos[position]
+        holder.view.listener = this
         /*holder.view.txtId.text = listKos[position].id
         holder.view.txtNamaKos.text = listKos[position].nama_kos
         holder.view.txtAlamat.text = listKos[position].alamat
@@ -46,6 +47,11 @@ class ListKosAdapter(val listKos:ArrayList<Kos>):RecyclerView.Adapter<ListKosAda
         listKos.clear()
         listKos.addAll(newListKos)
         notifyDataSetChanged()
+    }
+
+    override fun onButtonDetailClick(v: View) {
+        val action = HomeFragmentDirections.actionDetailKos(v.tag.toString())
+        Navigation.findNavController(v).navigate(action)
     }
 
 }
