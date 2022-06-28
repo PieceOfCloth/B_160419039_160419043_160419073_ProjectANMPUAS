@@ -6,6 +6,9 @@
         <variable
             name="kos"
             type="com.example.b_160419073_projectuts.model.Kos"/>
+        <variable
+            name="listener"
+            type="com.example.b_160419073_projectuts.view.ButtonDetailClickListener"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -33,6 +36,8 @@
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
+                android:imageUrl="@{kos.photoUrl}"
+                android:progressBar="@{progressBar}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -115,6 +120,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="Detail"
+                android:tag="@{kos.id}"
+                android:onClick="@{listener::onButtonDetailClick}"
                 app:cornerRadius="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/txtRangeHarga"
                 app:layout_constraintEnd_toEndOf="parent"
