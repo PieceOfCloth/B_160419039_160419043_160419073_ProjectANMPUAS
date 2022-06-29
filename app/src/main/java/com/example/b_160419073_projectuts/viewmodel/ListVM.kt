@@ -4,17 +4,25 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.room.Room
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.b_160419073_projectuts.model.Kos
+import com.example.b_160419073_projectuts.model.KosDatabase
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
-class ListVM(application: Application): AndroidViewModel(application)
+class ListVM(application: Application): AndroidViewModel(application), CoroutineScope
  {
     val kosLD = MutableLiveData<List<Kos>>()
+    private var job = Job()
     val kosLoadErrorLD = MutableLiveData<Boolean>()
     val loadingLD = MutableLiveData<Boolean>()
 
@@ -22,6 +30,14 @@ class ListVM(application: Application): AndroidViewModel(application)
     private var queue: RequestQueue? = null
 
     fun refresh() {
+        launch{
+            val db = Room.databaseBuilder(
+                getApplication(),
+                KosDatabase::class.java,
+                "newkosdb"
+            ).build()
+            kosLD.value = db.kosDao().selectAllKos()
+        }
 //        val kos1 = Kos("1","https://pixabay.com/get/g1d8479da1745ab8b5ef6286df01a37929554d63220c18a350ba18c281f9d8587a43e335ed5f11a5523ce69e0a78a6865_1280.jpg","Widodo Kos","This enormous house has a fairytale-like look to it and is in average condition.  The interior is done in colors that remind you of a coral reef.  The yard is large and resembles a meadow.  Also, rumor has it an old witch used to live here.","012345578", "asdasd", "12")
 //        val kos2 = Kos("2","https://pixabay.com/get/g1d8479da1745ab8b5ef6286df01a37929554d63220c18a350ba18c281f9d8587a43e335ed5f11a5523ce69e0a78a6865_1280.jpg","Widodo Kos","This enormous house has a fairytale-like look to it and is in average condition.  The interior is done in colors that remind you of a coral reef.  The yard is large and resembles a meadow.  Also, rumor has it an old witch used to live here.","012345578", "asdasd", "12")
 //        val kos3 = Kos("3","https://pixabay.com/get/g1d8479da1745ab8b5ef6286df01a37929554d63220c18a350ba18c281f9d8587a43e335ed5f11a5523ce69e0a78a6865_1280.jpg","Widodo Kos","This enormous house has a fairytale-like look to it and is in average condition.  The interior is done in colors that remind you of a coral reef.  The yard is large and resembles a meadow.  Also, rumor has it an old witch used to live here.","012345578", "asdasd", "12")
@@ -31,7 +47,7 @@ class ListVM(application: Application): AndroidViewModel(application)
         kosLoadErrorLD.value = false
         loadingLD.value = true
 
-        queue = Volley.newRequestQueue(getApplication())
+        /*queue = Volley.newRequestQueue(getApplication())
         val url = "https://discoverable-mixtur.000webhostapp.com/json.php"
 
         val stringRequest = StringRequest(
@@ -51,11 +67,16 @@ class ListVM(application: Application): AndroidViewModel(application)
             })
 
         stringRequest.tag = TAG
-        queue?.add(stringRequest)
+        queue?.add(stringRequest)*/
     }
+
+
 
      override fun onCleared() {
          super.onCleared()
          queue?.cancelAll(TAG)
      }
+
+     override val coroutineContext: CoroutineContext
+         get() = job + Dispatchers.Main
  }

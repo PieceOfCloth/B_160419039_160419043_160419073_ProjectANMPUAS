@@ -32,7 +32,7 @@ class DetailKosFragment : Fragment() {
 
         viewModel = ViewModelProvider(this).get(DetilVM::class.java)
 
-        viewModel.detail(id)
+        viewModel.detail(id.toInt())
 
         observeViewModel()
     }

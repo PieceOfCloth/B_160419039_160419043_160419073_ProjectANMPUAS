@@ -4,22 +4,41 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.room.Room
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.b_160419073_projectuts.model.Kos
+import com.example.b_160419073_projectuts.model.KosDatabase
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
 import java.util.ArrayList
+import kotlin.coroutines.CoroutineContext
 
-class DetilVM(application: Application): AndroidViewModel(application) {
+class DetilVM(application: Application): AndroidViewModel(application), CoroutineScope {
     val detailLD = MutableLiveData<Kos>()
-
+    private val job = Job()
     val TAG = "volleyTag"
     private var queue: RequestQueue?=null
 
-    fun detail(id:String){
+    fun detail2(id:Int){
+        launch{
+            val db = Room.databaseBuilder(
+                getApplication(),
+                KosDatabase::class.java,
+                "newkosdb"
+            ).build()
+            detailLD.value = db.kosDao().selectKos(id)
+        }
+    }
+
+    fun detail(id:Int){
         queue = Volley.newRequestQueue(getApplication())
         val url = "https://discoverable-mixtur.000webhostapp.com/json.php"
 
@@ -44,4 +63,7 @@ class DetilVM(application: Application): AndroidViewModel(application) {
         strRequest.tag = TAG
         queue?.add(strRequest)
     }
+
+    override val coroutineContext: CoroutineContext
+        get() = job + Dispatchers.Main
 }
