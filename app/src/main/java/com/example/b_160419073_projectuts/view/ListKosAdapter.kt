@@ -21,7 +21,7 @@ class ListKosAdapter(val listKos:ArrayList<Kos>):RecyclerView.Adapter<ListKosAda
     }
 
     override fun onBindViewHolder(holder: KosViewHolder, position: Int) {
-        holder.view.txtId.text = listKos[position].id
+        //holder.view.txtId.text = listKos[position].id.toString()
         holder.view.txtNamaKos.text = listKos[position].nama_kos
         holder.view.txtAlamat.text = listKos[position].alamat
         holder.view.txtRangeHarga.text = listKos[position].range_harga

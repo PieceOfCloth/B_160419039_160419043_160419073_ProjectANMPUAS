@@ -11,10 +11,15 @@ import com.android.volley.toolbox.Volley
 import com.example.b_160419073_projectuts.model.Kos
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import java.util.ArrayList
+import kotlin.coroutines.CoroutineContext
 
-class DetilVM(application: Application): AndroidViewModel(application) {
+class DetilVM(application: Application): AndroidViewModel(application),CoroutineScope {
     val detailLD = MutableLiveData<Kos>()
+    private val job = Job()
 
     val TAG = "volleyTag"
     private var queue: RequestQueue?=null
@@ -31,7 +36,7 @@ class DetilVM(application: Application): AndroidViewModel(application) {
                 val result = Gson().fromJson<ArrayList<Kos>>( response, sType)
 
                 for(x in result){
-                    if(x.id == id){
+                    if(x.id.toString() == id){
                         detailLD.value = x
                     }
                 }
@@ -44,4 +49,7 @@ class DetilVM(application: Application): AndroidViewModel(application) {
         strRequest.tag = TAG
         queue?.add(strRequest)
     }
+
+    override val coroutineContext: CoroutineContext
+        get() = job + Dispatchers.Main
 }
