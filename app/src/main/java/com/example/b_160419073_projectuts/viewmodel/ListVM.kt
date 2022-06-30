@@ -11,6 +11,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.b_160419073_projectuts.model.Kos
 import com.example.b_160419073_projectuts.model.KosDatabase
+import com.example.b_160419073_projectuts.util.buildDB
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.CoroutineScope
@@ -33,18 +34,14 @@ class ListVM(application: Application): AndroidViewModel(application), Coroutine
         loadingLD.value = true
         kosLoadErrorLD.value = false
         launch{
-            val db = Room.databaseBuilder(
-                getApplication(),
-                KosDatabase::class.java, "newkosdb").build()
+            val db = buildDB(getApplication())
             kosLD.value = db.kosDao().selectAllKos()
         }
     }
 
      fun createData(kos:List<Kos>){
          launch{
-             val db = Room.databaseBuilder(
-                 getApplication(),
-                 KosDatabase::class.java, "newkosdb").build()
+             val db =buildDB(getApplication())
              db.kosDao().insertAll(*kos.toTypedArray())
          }
      }

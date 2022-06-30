@@ -38,12 +38,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView7">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtInputName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
 
+                android:layout_height="wrap_content"
                 android:enabled="false"
-                android:text="Budi Doremi"
-                android:inputType="none" />
+                android:inputType="none"
+                android:text="Budi Doremi" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -73,12 +74,13 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtInputGender"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
 
+                android:layout_height="wrap_content"
                 android:enabled="false"
-                android:text="Laki-Laki"
-                android:inputType="none" />
+                android:inputType="none"
+                android:text="Laki-Laki" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -99,9 +101,10 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtInputHp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
 
+                android:layout_height="wrap_content"
                 android:enabled="false"
                 android:text="08123456789" />
         </com.google.android.material.textfield.TextInputLayout>

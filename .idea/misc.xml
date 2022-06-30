@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_article.xml" value="0.36666666666666664" />
+        <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_profile_edit.xml" value="0.5" />
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/list_article_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/activity_login.xml" value="0.15534420289855072" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/activity_main.xml" value="0.15534420289855072" />
