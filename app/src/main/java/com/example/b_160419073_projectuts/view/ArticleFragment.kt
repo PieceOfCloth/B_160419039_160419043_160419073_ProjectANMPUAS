@@ -22,10 +22,7 @@ class ArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnDetailArticle.setOnClickListener {
-            val action = ArticleFragmentDirections.actionArticleDetail()
-            Navigation.findNavController(it).navigate(action)
-        }
+
     }
 
 }

@@ -32,15 +32,15 @@ class ProfileFragment : Fragment() {
         userModel = ViewModelProvider(this).get(UserVM::class.java)
         var user = User("Dendi", "Laki-laki", "0850555")
         //userModel.insertUser(user)
-        userModel.refresh(1)
+        //userModel.refresh(1)
         observeViewModel()
 
         btnEditProfile.setOnClickListener {
             val action = ProfileFragmentDirections.actionProfileEdit()
             Navigation.findNavController(it).navigate(action)
-            //var user = User("Dendi", "Laki-laki", "0850555")
-            //var list = listOf(user)
-            //userModel.createData(list)
+            var user = User("Dendi", "Laki-laki", "0850555")
+            var list = listOf(user)
+            userModel.createData(list)
         }
     }
 

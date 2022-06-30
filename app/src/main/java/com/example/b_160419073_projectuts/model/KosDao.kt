@@ -5,12 +5,12 @@ import androidx.room.*
 @Dao
 interface KosDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(vararg kos:Kos)
+    fun insertAll(vararg kos:Kos)
     @Query("SELECT * FROM Kos")
-    suspend fun selectAllKos(): List<Kos>
+    fun selectAllKos(): List<Kos>
     @Query("SELECT * FROM Kos WHERE id = :id")
-    suspend fun selectKos(id:Int): Kos
+    fun selectKos(id:Int): Kos
     @Delete
-    suspend fun deleteKos(kos:Kos)
+    fun deleteKos(kos:Kos)
 }
 

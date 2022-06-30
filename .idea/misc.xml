@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ANMP/UAS_FINALLLL/app/src/main/res/layout/list_kos_item.xml" value="0.1" />
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_article.xml" value="0.36666666666666664" />
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_profile_edit.xml" value="0.5" />
@@ -29,7 +30,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
