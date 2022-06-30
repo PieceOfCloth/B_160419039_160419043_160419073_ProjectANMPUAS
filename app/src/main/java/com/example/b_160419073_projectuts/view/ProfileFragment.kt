@@ -21,7 +21,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //aleks disini
         btnEditProfile.setOnClickListener {
             val action = ProfileFragmentDirections.actionProfileEdit()
             Navigation.findNavController(it).navigate(action)
