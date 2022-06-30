@@ -61,6 +61,9 @@
         <action
             android:id="@+id/actionArticleDetail"
             app:destination="@id/articleDetailFragment" />
+        <action
+            android:id="@+id/actionCreateArtikel"
+            app:destination="@id/addArticleFragment" />
     </fragment>
     <fragment
         android:id="@+id/articleDetailFragment"
@@ -91,4 +94,9 @@
             app:destination="@id/itemProfile"
             app:popUpTo="@id/itemProfile" />
     </fragment>
+    <fragment
+        android:id="@+id/addArticleFragment"
+        android:name="com.example.b_160419073_projectuts.view.AddArticleFragment"
+        android:label="fragment_add_article"
+        tools:layout="@layout/fragment_add_article" />
 </navigation>

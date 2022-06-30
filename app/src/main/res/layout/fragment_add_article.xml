@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AddArticleFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnAddArtikel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Add Artikel"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout11"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout11"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter Deskripsi Artikel"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:expandedHintEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout13"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout13"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout13">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtInputDeskripsiArtikel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout13"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter Judul Artikel"
+            app:expandedHintEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout12"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout12"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout12">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtInputJudulArtikel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout12"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Enter URL Image Artikel"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:expandedHintEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHeaderArtikel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtInputURLImageArtikel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/txtHeaderArtikel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:text="New Artikel"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
