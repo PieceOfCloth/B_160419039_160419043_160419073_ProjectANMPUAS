@@ -12,3 +12,10 @@ data class Kos(
     val alamat:String?,
     val range_harga:String?
 )
+
+data class User(
+    val photoUrl: String?,
+    val nama: String?,
+    val gender: String?,
+    val noHP: String?
+)
