@@ -1,6 +1,7 @@
 package com.example.b_160419073_projectuts.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -61,6 +62,7 @@ class HomeFragment : Fragment() {
     fun observeViewModel() {
         viewModel.kosLD.observe(viewLifecycleOwner) {
             listKosAdapter.updateListKos(it)
+            Log.d("data", it.toString())
         }
 
         viewModel.kosLoadErrorLD.observe(viewLifecycleOwner, Observer {

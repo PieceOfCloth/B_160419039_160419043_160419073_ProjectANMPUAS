@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="Kos"
+            type="com.example.b_160419073_projectuts.model.Kos"/>
+        <variable
+            name="listener"
+            type="com.example.b_160419073_projectuts.view.ButtonDetailClickListener"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -27,6 +36,8 @@
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
+                android:imageUrl="@{Kos.photoUrl}"
+                android:progressBar="@{progressBar}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
+                android:text="@{Kos.id}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Nama Kos-Kosan"
+                android:text="@{Kos.nama_kos}"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Text Alamat"
+                android:text="@{Kos.alamat}"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
@@ -99,7 +110,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Range Harga"
+                android:text="@{Kos.range_harga}"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
@@ -109,6 +120,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:text="Detail"
+                android:tag="@{Kos.id}"
+                android:onClick="@{listener::onButtonDetailClick}"
                 app:cornerRadius="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/txtRangeHarga"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -117,3 +130,4 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
