@@ -31,7 +31,7 @@ class DetilVM(application: Application): AndroidViewModel(application) {
                 val result = Gson().fromJson<ArrayList<Kos>>( response, sType)
 
                 for(x in result){
-                    if(x.id == id){
+                    if(x.id == id.toInt()){
                         detailLD.value = x
                     }
                 }
