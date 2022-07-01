@@ -7,9 +7,9 @@
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/fragment_profile_edit.xml" value="0.5" />
         <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/list_article_item.xml" value="0.36666666666666664" />
-        <entry key="..\:/ANMP/UAS_FIX/app/src/main/res/layout/list_kos_item.xml" value="0.1" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectANMP/app/src/main/res/layout/fragment_add_article.xml" value="0.25" />
-        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectANMP/app/src/main/res/layout/fragment_article.xml" value="0.1763668430335097" />
+        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectANMP/app/src/main/res/layout/fragment_article.xml" value="0.25" />
+        <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectANMP/app/src/main/res/layout/fragment_article_add.xml" value="0.25" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectANMP/app/src/main/res/layout/list_article_item.xml" value="0.25" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectANMP/app/src/main/res/layout/list_kos_item.xml" value="0.15353260869565216" />
         <entry key="..\:/Users/adamt/AndroidStudioProjects/B_160419073_ProjectUTS/app/src/main/res/layout/activity_login.xml" value="0.15534420289855072" />
@@ -30,7 +30,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
